@@ -1,5 +1,6 @@
 require "sinatra"
-require "sinatra/reloader"
+# Prevent the application from reloading in production
+require "sinatra/reloader" if development?
 # Tilt is an adapter between web applications and different Ruby templating languages.
 # It's like a USB plug: devices can communicate without having to know about each other when they are built.
 require "tilt/erubis"
