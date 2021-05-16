@@ -17,8 +17,8 @@ helpers do
     end.join
   end
 
-  # Grab a list of all the text
   def each_chapter
+    # Iterate through each chapter, yielding it
     @contents.each_with_index do |name, index|
       number = index + 1
       contents = File.read("data/chp#{number}.txt")
@@ -26,13 +26,14 @@ helpers do
     end
   end
 
-  # Check whether any of the text contains the search string
   def chapters_matching(query)  
     results = []
     return results if !query || query.empty?
 
+    # each_chapter iterates through each chapter, yielding it to the block
     each_chapter do |number, name, contents|
       matches = {}
+      # The contents variable here is a chapter - we're splitting it up into paragraphs
       contents.split("\n\n").each_with_index do |paragraph, index|
         # Filtering occurs within the block
         matches[index] = paragraph if paragraph.include?(query)
@@ -44,6 +45,11 @@ helpers do
     end
 
     results
+  end
+
+  # We can use this directly in our search.erb file
+  def highlight(text, term)
+    text.gsub(term, %(<strong>#{term}</strong>))
   end
 end
 

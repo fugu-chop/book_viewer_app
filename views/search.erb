@@ -16,10 +16,10 @@
         <li>
           <h4><%= result[:name] %></h4>
           <ul>
-            <% result[:paragraphs].each do |index, text| %>
+            <% result[:paragraphs].each do |idx, text| %>
               <li>
-                <a href="/chapters/<%= result[:number] %>#paragraph<%= index %>">
-                  <%= text %>
+                <a href="/chapters/<%= result[:number] %>#paragraph<%= idx %>">
+                  <%= highlight(text, params[:query]) %>
                 </a>
               </li>
             <% end %>
