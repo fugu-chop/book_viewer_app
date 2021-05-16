@@ -5,3 +5,7 @@ The application can be run in development (using webrick) with the following com
 ```
 bundle exec rackup -s webrick
 ```
+Alternatively, use:
+```
+heroku local
+```
