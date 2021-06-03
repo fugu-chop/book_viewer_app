@@ -6,14 +6,14 @@ This app allows users to view different parts of the Sherlock Holmes literature,
 
 ### How to Run
 The application has been deployed to Heroku and can be found here: https://book-viewer-dw.herokuapp.com/
-The application can be run in development (using webrick) with the following command (port 9292):
-```
-bundle exec rackup -s webrick
-```
-Alternatively, use:
-```
-heroku local
-```
+
+The application can be run in development, if you like:
+1. Clone the repo locally
+2. Make sure you have the `bundle` gem installed.
+3. Run `bundle install` in your CLI
+4. Run `bundle exec rackup -s webrick` in your CLI
+5. Visit `http://localhost:9292` in your web browser
+
 ### Challenges
 Deployment wasn't too bad - Heroku is pretty easy to deploy to, and none of the configuration on my machine seemed to create any issues.
 
